@@ -51,7 +51,7 @@
       {
         "name": "2. Stop",
         "type": "custom",
-        "commandLine": "source /opt/bitnami/stacksmith-utils.sh && print_welcome_page && cd ${current.project.path} && pkill -u bitnami activator && echo \"Web server stopped.\"",
+        "commandLine": "source /opt/bitnami/stacksmith-utils.sh && print_welcome_page && cd ${current.project.path} && pkill -u bitnami -n java && echo \"Web server stopped.\"",
         "attributes": {}
       },
       {
