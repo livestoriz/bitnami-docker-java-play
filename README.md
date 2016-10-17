@@ -1,3 +1,6 @@
+[![CircleCI](https://circleci.com/gh/bitnami/bitnami-docker-java-play/tree/che.svg?style=shield)](https://circleci.com/gh/bitnami/bitnami-docker-java-play/tree/che)
+[![Docker Hub Automated Build](http://container.checkforupdates.com/badges/bitnami/che-java-play)](https://hub.docker.com/r/bitnami/che-java-play/)
+
 # Eclipse Che Developer Workspace
 You can use this Development environment to create an Eclipse Che on-demand workspace with a sample project ready to start developing. Click the link below to automatically create and launch a Java / Play framework environment workspace on Codenvy:
 
