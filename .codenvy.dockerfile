@@ -10,10 +10,7 @@ ENV BITNAMI_APP_NAME=java-play \
 RUN bitnami-pkg install java-1.8.0_91-0 --checksum 64cf20b77dc7cce3a28e9fe1daa149785c9c8c13ad1249071bc778fa40ae8773
 
 # Install Java/Play dependencies
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends software-properties-common && \
-    add-apt-repository ppa:openjdk-r/ppa && \
-    apt-get update && \
+RUN echo "deb http://http.debian.net/debian jessie-backports main" >> /etc/apt/sources.list && apt-get update && \
     apt-get -y install --no-install-recommends openjdk-8-jdk && \
     apt-get clean && \
     apt-get -y autoremove && \
