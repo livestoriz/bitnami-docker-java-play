@@ -16,10 +16,7 @@ ENV BITNAMI_APP_NAME=java-play \
     TERM=xterm
 
 # Install related packages
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends software-properties-common && \
-    add-apt-repository ppa:openjdk-r/ppa && \
-    apt-get update && \
+RUN echo "deb http://http.debian.net/debian jessie-backports main" >> /etc/apt/sources.list && apt-get update && \
     apt-get install -y --no-install-recommends openjdk-8-jdk && \
     apt-get clean && \
     rm -rf /var/lib/apt /var/cache/apt/archives/* /tmp/*
