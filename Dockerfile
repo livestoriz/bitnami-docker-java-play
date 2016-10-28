@@ -28,7 +28,7 @@ RUN apt-get update && \
 RUN bitnami-pkg install node-6.6.0-1 --checksum 36f42bb71b35f95db3bb21d088fbd9438132fb2a7fb4d73b5951732db9a6771e
 
 # Install Java/Play (Activator) module
-RUN bitnami-pkg install activator-1.3.10-2 --checksum 5858cea425f0a6e8cb882dd456681b34eb216672654820e5e8e52449e1759bbe
+RUN bitnami-pkg install activator-1.3.10-4 --checksum 77fa565ff8d55cd9b21dc66405a4f4e9a089bd8fe231a61dd4ac9d0dcad0f3ac
 
 COPY rootfs/ /
 
