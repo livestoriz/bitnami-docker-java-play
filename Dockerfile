@@ -6,20 +6,17 @@
 ##   $ docker run -p 9000:9000 bitnami/bitnaxmi-docker-javaplay
 ##
 
-FROM gcr.io/stacksmith-images/ubuntu-buildpack:14.04-r10
+FROM gcr.io/stacksmith-images/minideb-buildpack:jessie-r2
 
 MAINTAINER Bitnami <containers@bitnami.com>
 
 ENV BITNAMI_APP_NAME=java-play \
-    BITNAMI_IMAGE_VERSION=1.3.10-r2 \
+    BITNAMI_IMAGE_VERSION=1.3.10-r3 \
     PATH=/opt/bitnami/activator/bin:/opt/bitnami/node/bin:$PATH \
     TERM=xterm
 
 # Install related packages
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends software-properties-common && \
-    add-apt-repository ppa:openjdk-r/ppa && \
-    apt-get update && \
+RUN echo "deb http://http.debian.net/debian jessie-backports main" >> /etc/apt/sources.list && apt-get update && \
     apt-get install -y --no-install-recommends openjdk-8-jdk && \
     apt-get clean && \
     rm -rf /var/lib/apt /var/cache/apt/archives/* /tmp/*
