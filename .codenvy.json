@@ -22,7 +22,7 @@
         }
       }
     },
-    "name": "bitnami-play",
+    "name": "play",
     "defaultEnv": "default",
     "projects": [
       {
