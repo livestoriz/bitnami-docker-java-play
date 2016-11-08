@@ -2,8 +2,8 @@ FROM gcr.io/stacksmith-images/minideb-buildpack:jessie-r3
 
 MAINTAINER Bitnami <containers@bitnami.com>
 
-ENV BITNAMI_APP_NAME=java-play \
-    BITNAMI_IMAGE_VERSION=1.3.10-r4 \
+ENV BITNAMI_APP_NAME=che-java-play \
+    BITNAMI_IMAGE_VERSION=che-1.3.10-r4 \
     PATH=/opt/bitnami/activator/bin:/opt/bitnami/node/bin:$PATH
 
 # Install Java module
@@ -31,4 +31,4 @@ WORKDIR /projects
 
 ENV TERM=xterm
 
-CMD ["/entrypoint.sh", "tail", "-f", "/dev/null"]
+CMD [ "tail", "-f", "/dev/null"]
