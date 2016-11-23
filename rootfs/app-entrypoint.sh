@@ -2,7 +2,7 @@
 set -e
 
 # Set default values
-export PLAY_PROJECT_NAME=${PLAY_PROJECT_NAME:-"test"}
+export PLAY_PROJECT_NAME=${PLAY_PROJECT_NAME:-"myapp"}
 export PLAY_TEMPLATE=${PLAY_TEMPLATE:-"play-java"}
 export PLAY_PROJECT_PORT=${PLAY_PROJECT_PORT:-"9000"}
 export SYMFONY_PROJECT_NAME=${SYMFONY_PROJECT_NAME:-"app_template"}
