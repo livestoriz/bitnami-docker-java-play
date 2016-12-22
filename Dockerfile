@@ -6,7 +6,7 @@
 ##   $ docker run -p 9000:9000 bitnami/bitnaxmi-docker-javaplay
 ##
 
-FROM gcr.io/stacksmith-images/minideb-buildpack:jessie-r2
+FROM gcr.io/stacksmith-images/minideb-buildpack:jessie-r7
 
 MAINTAINER Bitnami <containers@bitnami.com>
 
