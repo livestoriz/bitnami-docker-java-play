@@ -11,7 +11,7 @@ FROM gcr.io/stacksmith-images/minideb-buildpack:jessie-r7
 MAINTAINER Bitnami <containers@bitnami.com>
 
 ENV BITNAMI_APP_NAME=java-play \
-    BITNAMI_IMAGE_VERSION=1.3.10-r3 \
+    BITNAMI_IMAGE_VERSION=1.3.10-r4 \
     PATH=/opt/bitnami/activator/bin:/opt/bitnami/node/bin:$PATH \
     TERM=xterm
 
