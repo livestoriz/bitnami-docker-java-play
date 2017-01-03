@@ -3,7 +3,7 @@ FROM gcr.io/stacksmith-images/minideb-buildpack:jessie-r8
 MAINTAINER Bitnami <containers@bitnami.com>
 
 ENV BITNAMI_APP_NAME=che-java-play \
-    BITNAMI_IMAGE_VERSION=1.3.10-r6 \
+    BITNAMI_IMAGE_VERSION=1.3.10-r7 \
     PATH=/opt/bitnami/activator/bin:/opt/bitnami/node/bin:$PATH
 
 # Install Java module
