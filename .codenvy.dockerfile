@@ -3,7 +3,7 @@ FROM gcr.io/stacksmith-images/minideb-buildpack:jessie-r8
 MAINTAINER Bitnami <containers@bitnami.com>
 
 ENV BITNAMI_APP_NAME=che-java-play \
-    BITNAMI_IMAGE_VERSION=1.3.10-r7 \
+    BITNAMI_IMAGE_VERSION=1.3.10-r8 \
     PATH=/opt/bitnami/activator/bin:/opt/bitnami/node/bin:$PATH
 
 # Install Java module
@@ -11,7 +11,7 @@ RUN bitnami-pkg install java-1.8.0_91-0 --checksum 64cf20b77dc7cce3a28e9fe1daa14
 
 # Install Java/Play dependencies
 RUN echo "deb http://http.debian.net/debian jessie-backports main" >> /etc/apt/sources.list && apt-get update && \
-    apt-get -y install --no-install-recommends openjdk-8-jdk && \
+    apt-get -y install --no-install-recommends ca-certificates-java/jessie-backports openjdk-8-jdk-headless openjdk-8-jdk && \
     apt-get clean && \
     apt-get -y autoremove && \
     rm -rf /var/lib/apt /var/cache/apt/archives/* /tmp/*
