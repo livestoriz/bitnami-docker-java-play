@@ -11,13 +11,13 @@ FROM gcr.io/stacksmith-images/minideb-buildpack:jessie-r8
 MAINTAINER Bitnami <containers@bitnami.com>
 
 ENV BITNAMI_APP_NAME=java-play \
-    BITNAMI_IMAGE_VERSION=1.3.10-r5 \
+    BITNAMI_IMAGE_VERSION=1.3.10-r6 \
     PATH=/opt/bitnami/activator/bin:/opt/bitnami/node/bin:$PATH \
     TERM=xterm
 
 # Install related packages
 RUN echo "deb http://http.debian.net/debian jessie-backports main" >> /etc/apt/sources.list && apt-get update && \
-    apt-get install -y --no-install-recommends openjdk-8-jdk && \
+    apt-get install -y --no-install-recommends ca-certificates-java/jessie-backports openjdk-8-jdk-headless openjdk-8-jdk && \
     apt-get clean && \
     rm -rf /var/lib/apt /var/cache/apt/archives/*
 
