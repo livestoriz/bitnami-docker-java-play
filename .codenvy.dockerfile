@@ -8,7 +8,7 @@ RUN install_packages git subversion openssh-server rsync
 RUN mkdir /var/run/sshd && sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 
 ENV BITNAMI_APP_NAME=che-java-play \
-    BITNAMI_IMAGE_VERSION=1.3.10-r8 \
+    BITNAMI_IMAGE_VERSION=1.3.10-r9 \
     PATH=/opt/bitnami/activator/bin:/opt/bitnami/node/bin:$PATH
 
 RUN bitnami-pkg install node-6.4.0-0 --checksum 41d5a7b17ac1f175c02faef28d44eae0d158890d4fa9893ab24b5cc5f551486f
@@ -26,4 +26,4 @@ WORKDIR /projects
 
 ENV TERM=xterm
 
-CMD sudo /usr/sbin/sshd -D && tail -f /dev/null
+CMD sudo /usr/sbin/sshd -D
