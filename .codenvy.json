@@ -49,13 +49,7 @@
     ],
     "commands": [
       {
-        "name": "2. Stop",
-        "type": "custom",
-        "commandLine": "print-help && cd ${current.project.path} && pkill -u bitnami -n java && echo \"Web server stopped.\"",
-        "attributes": {}
-      },
-      {
-        "name": "3. Run",
+        "name": "2. Run",
         "type": "custom",
         "commandLine": "print-help && cd ${current.project.path} && /opt/bitnami/activator/bin/activator -Doffline=true -Dhttp.host=0.0.0.0 -Dhttp.port=9000 -Dsbt.log.noformat=true ~run",
         "attributes": {
