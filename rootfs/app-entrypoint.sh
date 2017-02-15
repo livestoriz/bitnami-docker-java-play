@@ -1,11 +1,6 @@
 #!/bin/bash
 set -e
 
-# Set default values
-export PLAY_PROJECT_NAME=${PLAY_PROJECT_NAME:-"myapp"}
-export PLAY_TEMPLATE=${PLAY_TEMPLATE:-"play-java"}
-export PLAY_PROJECT_PORT=${PLAY_PROJECT_PORT:-"9000"}
-
 PROJECT_DIRECTORY=/app/$PLAY_PROJECT_NAME
 
 log () {

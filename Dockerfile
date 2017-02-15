@@ -29,10 +29,14 @@ RUN bitnami-pkg install activator-1.3.10-4 --checksum 77fa565ff8d55cd9b21dc66405
 
 COPY rootfs/ /
 
+ENV PLAY_PROJECT_NAME="myapp" \
+    PLAY_TEMPLATE="play-java" \
+    PLAY_PROJECT_PORT="9000"
+
 WORKDIR /app
 
 EXPOSE 9000
 
 ENTRYPOINT ["/app-entrypoint.sh"]
 
-CMD ["activator", "-Doffline=true", "-Dhttp.address=0.0.0.0 -Dhttp.port=9000", "~run"] 
+CMD ["activator", "-Doffline=true", "-Dhttp.address=0.0.0.0 -Dhttp.port=9000", "~run"]

@@ -4,8 +4,6 @@ services:
   myapp:
     stdin_open: true
     image: bitnami/java-play:latest
-    environment:
-      - PLAY_PROJECT_NAME=
     ports:
       - '8888:8888'
       - '9000:9000'
