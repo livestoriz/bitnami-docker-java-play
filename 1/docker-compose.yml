@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  myapp:
+    stdin_open: true
+    image: bitnami/java-play:1
+    ports:
+      - '8888:8888'
+      - '9000:9000'
+    volumes:
+      - .:/app
