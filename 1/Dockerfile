@@ -8,8 +8,8 @@ ENV BITNAMI_APP_NAME=java-play \
     TERM=xterm
 
 # Install related packages
-RUN echo "deb http://http.debian.net/debian jessie-r10
-    apt-get install -y --no-install-recommends ca-certificates-java/jessie-r10
+RUN echo "deb http://http.debian.net/debian jessie-backports main" >> /etc/apt/sources.list && apt-get update && \
+    apt-get install -y --no-install-recommends ca-certificates-java/jessie-backports openjdk-8-jdk-headless openjdk-8-jdk && \
     apt-get clean && \
     rm -rf /var/lib/apt /var/cache/apt/archives/*
 
