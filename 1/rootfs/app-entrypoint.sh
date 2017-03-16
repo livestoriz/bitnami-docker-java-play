@@ -16,6 +16,8 @@ if [ "$1" == "activator" -a "$4" == "~run" ] ; then
   fi
 fi
 
+log "activator successfully initialized"
+
 cd $PROJECT_DIRECTORY
 
 exec tini -- "$@"
