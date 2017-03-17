@@ -1,9 +1,9 @@
-FROM gcr.io/stacksmith-images/minideb-buildpack:jessie-r10
+FROM gcr.io/stacksmith-images/minideb-buildpack:jessie-r11
 
 MAINTAINER Bitnami <containers@bitnami.com>
 
 ENV BITNAMI_APP_NAME=java-play \
-    BITNAMI_IMAGE_VERSION=1.3.10-r8 \
+    BITNAMI_IMAGE_VERSION=1.3.12-r0 \
     PATH=/opt/bitnami/activator/bin:/opt/bitnami/node/bin:$PATH \
     TERM=xterm
 
@@ -17,7 +17,7 @@ RUN echo "deb http://http.debian.net/debian jessie-backports main" >> /etc/apt/s
 RUN bitnami-pkg install node-6.6.0-1 --checksum 36f42bb71b35f95db3bb21d088fbd9438132fb2a7fb4d73b5951732db9a6771e
 
 # Install Java/Play (Activator) module
-RUN bitnami-pkg install activator-1.3.10-4 --checksum 77fa565ff8d55cd9b21dc66405a4f4e9a089bd8fe231a61dd4ac9d0dcad0f3ac
+RUN bitnami-pkg install activator-1.3.12-0 --checksum 70d033cb398bcc7c5ac7786a27152df9fa44b2f8ddee232a721b9f6d611dba31
 
 COPY rootfs/ /
 
