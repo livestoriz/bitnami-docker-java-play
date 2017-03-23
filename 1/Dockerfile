@@ -3,7 +3,7 @@ FROM bitnami/minideb-extras:jessie-r13-buildpack
 MAINTAINER Bitnami <containers@bitnami.com>
 
 ENV BITNAMI_APP_NAME=java-play \
-    BITNAMI_IMAGE_VERSION=1.3.12-r0 \
+    BITNAMI_IMAGE_VERSION=1.3.12-r1 \
     PATH=/opt/bitnami/activator/bin:/opt/bitnami/node/bin:$PATH \
     TERM=xterm
 
