@@ -3,7 +3,9 @@ version: '2'
 services:
   myapp:
     stdin_open: true
-    image: bitnami/java-play:1
+    image: 'bitnami/java-play:1'
+    labels:
+      kompose.service.type: nodeport
     ports:
       - '8888:8888'
       - '9000:9000'
