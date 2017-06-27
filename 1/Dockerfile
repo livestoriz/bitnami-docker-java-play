@@ -1,18 +1,18 @@
-FROM bitnami/minideb-extras:jessie-r16-buildpack
+FROM bitnami/minideb-extras:jessie-r19-buildpack
 LABEL maintainer "Bitnami <containers@bitnami.com>"
 
 
 
 # Install required system packages and dependencies
-RUN install_packages ghostscript imagemagick libbz2-1.0 libc6 libgcc1 libmysqlclient18 libncurses5 libreadline6 libsqlite3-0 libssl1.0.0 libstdc++6 libtinfo5 zlib1g
-RUN bitnami-pkg install node-6.10.3-0 --checksum 07bb05274dd2cf71ebdd92ff00925bf1ff16588664e24f59a3b5ecfce7dce238
-RUN bitnami-pkg install activator-1.3.12-0 --checksum 70d033cb398bcc7c5ac7786a27152df9fa44b2f8ddee232a721b9f6d611dba31
-RUN echo 'deb http://http.debian.net/debian jessie-backports main' >> /etc/apt/sources.list && apt-get update && apt-get install -y --no-install-recommends ca-certificates-java/jessie-backports openjdk-8-jdk-headless openjdk-8-jdk && apt-get clean && rm -rf /var/lib/apt /var/cache/apt/archives/*
+RUN echo "deb http://http.debian.net/debian jessie-backports main" >>/etc/apt/sources.list
+RUN install_packages ca-certificates-java/jessie-backports ghostscript imagemagick libbz2-1.0 libc6 libgcc1 libmysqlclient18 libncurses5 libreadline6 libsqlite3-0 libssl1.0.0 libstdc++6 libtinfo5 openjdk-8-jdk openjdk-8-jdk-headless zlib1g
+RUN bitnami-pkg install node-6.11.0-0 --checksum 203d22e3357eb5e8573c8d95691f01e1a2a3badcfc2baee0bf83b3ad91dfeb86
+RUN bitnami-pkg install activator-1.3.12-1 --checksum 02826d6da33fd24bd3007240d5d32d4779a1968d7ef8b075950a2c82109709fc
 
 COPY rootfs /
 
 ENV BITNAMI_APP_NAME="java-play" \
-    BITNAMI_IMAGE_VERSION="1.3.12-r2" \
+    BITNAMI_IMAGE_VERSION="1.3.12-r3" \
     PATH="/opt/bitnami/node/bin:/opt/bitnami/activator/bin:$PATH" \
     PLAY_PROJECT_NAME="myapp" \
     PLAY_PROJECT_PORT="9000" \
