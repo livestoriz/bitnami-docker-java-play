@@ -11,10 +11,13 @@ ENV BITNAMI_APP_NAME=che-java-play \
     PATH=/opt/bitnami/activator/bin:/opt/bitnami/node/bin:$PATH
 
 # Install related packages
-RUN echo "deb http://http.debian.net/debian jessie-backports main" >> /etc/apt/sources.list && apt-get update && \
-    apt-get install -y --no-install-recommends ca-certificates-java/jessie-backports openjdk-8-jdk-headless openjdk-8-jdk && \
-    apt-get clean && \
-    rm -rf /var/lib/apt /var/cache/apt/archives/*
+#RUN echo "deb http://http.debian.net/debian jessie-backports main" >> /etc/apt/sources.list && apt-get update && \
+#    apt-get install -y --no-install-recommends ca-certificates-java/jessie-backports openjdk-8-jdk-headless openjdk-8-jdk && \
+#    apt-get clean && \
+#    rm -rf /var/lib/apt /var/cache/apt/archives/*
+
+RUN echo "deb http://http.debian.net/debian jessie-backports main" >>/etc/apt/sources.list
+RUN install_packages ca-certificates-java/jessie-backports ghostscript imagemagick libbz2-1.0 libc6 libgcc1 libmysqlclient18 libncurses5 libreadline6 libsqlite3-0 libssl1.0.0 libstdc++6 libtinfo5 openjdk-8-jdk openjdk-8-jdk-headless zlib1g
 
 RUN bitnami-pkg install node-6.11.0-0 --checksum 203d22e3357eb5e8573c8d95691f01e1a2a3badcfc2baee0bf83b3ad91dfeb86
 
