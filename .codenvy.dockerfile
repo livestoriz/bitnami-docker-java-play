@@ -22,7 +22,7 @@ RUN install_packages ca-certificates-java/jessie-backports ghostscript imagemagi
 RUN bitnami-pkg install node-6.11.0-0 --checksum 203d22e3357eb5e8573c8d95691f01e1a2a3badcfc2baee0bf83b3ad91dfeb86
 
 # Install Java/Play (Activator) module
-RUN bitnami-pkg install activator-1.3.12-1 --checksum 02826d6da33fd24bd3007240d5d32d4779a1968d7ef8b075950a2c82109709fc
+RUN bitnami-pkg install activator-1.3.12-1 --checksum 02826d6da33fd24bd3007240d5d32d4779a1968d7ef8b075950a2c82109709fc -- --applicationDirectory /projects
 
 EXPOSE 9000
 
