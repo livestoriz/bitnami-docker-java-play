@@ -11,9 +11,6 @@ items:
     name: myapp
   spec:
     ports:
-    - name: "8888"
-      port: 8888
-      targetPort: 8888
     - name: "9000"
       port: 9000
       targetPort: 9000
@@ -43,7 +40,6 @@ items:
         - image: bitnami/java-play:latest
           name: myapp
           ports:
-          - containerPort: 8888
           - containerPort: 9000
           resources: {}
           stdin: true

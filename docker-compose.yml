@@ -7,7 +7,6 @@ services:
     labels:
       kompose.service.type: nodeport
     ports:
-      - '8888:8888'
       - '9000:9000'
     volumes:
       - .:/app
